@@ -1,2 +1,16 @@
+{-# LANGUAGE OverloadedStrings #-}
+
+
+import SendAPI (EmailAndName(EmailAndName), simpleMail, sendMailList)
+import Config (MailjetConfigRecord(MailjetConfigRecord))
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = do
+  let fromV = EmailAndName "ok" "ok"
+  let toV = EmailAndName "ok" "ok"
+  let subject = "ok"
+  let content = "ok"
+  let email = simpleMail fromV toV subject content
+  let secrets = MailjetConfigRecord "public" "private"
+  print =<< sendMailList secrets [email]
+

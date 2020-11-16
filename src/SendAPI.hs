@@ -25,7 +25,7 @@ instance ToJSON EmailAndName where
 -- @
 -- Hence this object.
 --
-newtype MailjetWrapper a = MailjetWrapper [a]
+newtype MailjetWrapper a = MailjetWrapper [a] deriving (Show)
 instance ToJSON a => ToJSON (MailjetWrapper a) where
   toJSON (MailjetWrapper messageList) =
       object ["Messages" .= toJSON messageList]
@@ -53,7 +53,19 @@ data MailjetMail = MailjetMail {
   mjmHTMLPart :: Maybe Text,
   mjmTextPart :: Text
 } deriving (Generic)
-  
+
+-- | Single recipient, no html.
+simpleMail :: EmailAndName -> EmailAndName -> Text -> Text -> MailjetMail
+simpleMail fromVal toVal subjectVal contentVal = MailjetMail {
+    mjmFrom = fromVal,
+    mjmTo = [toVal],
+    mjmCc = [],
+    mjmBcc = [],
+    mjmSubject = subjectVal,
+    mjmHTMLPart = Just contentVal,
+    mjmTextPart = contentVal
+  }
+
 emailJSONOption :: Options
 emailJSONOption = defaultOptions
   { fieldLabelModifier = dropLibPrefix,
