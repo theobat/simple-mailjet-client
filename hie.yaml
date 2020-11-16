@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "."
+      component: "simple-mailjet-client:lib"
+    - path: "."
+      component: "simple-mailjet-client:test"
+

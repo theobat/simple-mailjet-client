@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fdbedc214d535cb850ea46725f74f0ce57298bc0b93ba64914e4ba32180fef11
+
+name:           simple-mailjet-client
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/theobat/simple-mailjet-client#readme>
+homepage:       https://github.com/theobat/simple-mailjet-client#readme
+bug-reports:    https://github.com/theobat/simple-mailjet-client/issues
+author:         kanso
+maintainer:     contact _at_ kanso.ink
+copyright:      2020 kanso
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/theobat/simple-mailjet-client
+
+library
+  exposed-modules:
+      Config
+      SendAPI
+  other-modules:
+      Paths_simple_mailjet_client
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson >=1.4
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , req >=3.2
+    , text
+  default-language: Haskell2010
+
+test-suite simple-mailjet-client-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_simple_mailjet_client
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson >=1.4
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , req >=3.2
+    , simple-mailjet-client
+    , text
+  default-language: Haskell2010
