@@ -8,29 +8,29 @@ The spec is described [here](https://dev.mailjet.com/email/guides/send-api-v31/)
 ```bash
 # This call sends a message to one recipient.
 curl -s \
-	-X POST \
-	--user "$MJ_APIKEY_PUBLIC:$MJ_APIKEY_PRIVATE" \
-	https://api.mailjet.com/v3.1/send \
-	-H 'Content-Type: application/json' \
-	-d '{
-		"Messages":[
-				{
-						"From": {
-								"Email": "pilot@mailjet.com",
-								"Name": "Mailjet Pilot"
-						},
-						"To": [
-								{
-										"Email": "passenger1@mailjet.com",
-										"Name": "passenger 1"
-								}
-						],
-						"Subject": "Your email flight plan!",
-						"TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
-						"HTMLPart": "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
-				}
-		]
-	}'
+  -X POST \
+  --user "$MJ_APIKEY_PUBLIC:$MJ_APIKEY_PRIVATE" \
+  https://api.mailjet.com/v3.1/send \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "Messages":[
+      {
+        "From": {
+          "Email": "pilot@mailjet.com",
+          "Name": "Mailjet Pilot"
+        },
+        "To": [
+          {
+            "Email": "passenger1@mailjet.com",
+            "Name": "passenger 1"
+          }
+        ],
+        "Subject": "Your email flight plan!",
+        "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
+        "HTMLPart": "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
+      }
+    ]
+  }'
 ```
  and the corresponding response:
 ````
