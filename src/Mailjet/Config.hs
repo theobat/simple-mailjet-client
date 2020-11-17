@@ -1,9 +1,8 @@
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Config where
+module Mailjet.Config where
 
-import Data.Text (Text)
 import Data.String (IsString)
 import Network.HTTP.Req (Scheme(Https), Url, (/:), https)
 import Data.ByteString (ByteString)

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fdbedc214d535cb850ea46725f74f0ce57298bc0b93ba64914e4ba32180fef11
+-- hash: afca2142f3a9e80503e3b8a3fd618d3c94275a9e5e4968223d8bebf4a8ac032f
 
 name:           simple-mailjet-client
 version:        0.1.0.0
@@ -27,8 +27,8 @@ source-repository head
 
 library
   exposed-modules:
-      Config
-      SendAPI
+      Mailjet.Config
+      Mailjet.SendAPI
   other-modules:
       Paths_simple_mailjet_client
   hs-source-dirs:

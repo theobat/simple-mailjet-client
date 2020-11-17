@@ -1,8 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 
-import SendAPI (EmailAndName(EmailAndName), simpleMail, sendMailList)
-import Config (MailjetConfigRecord(MailjetConfigRecord))
+import Mailjet.SendAPI (EmailAndName(EmailAndName), simpleMail, sendMailList)
+import Mailjet.Config (MailjetConfigRecord(MailjetConfigRecord))
 
 main :: IO ()
 main = do
