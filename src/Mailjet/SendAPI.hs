@@ -24,7 +24,7 @@ import Network.HTTP.Req
 
 -- | Email is forst, name is second. Name is mandatory
 -- but you can put name as email or as blank.
-data EmailAndName = EmailAndName Text Text deriving (Eq)
+data EmailAndName = EmailAndName Text Text deriving (Eq, Show)
 
 instance ToJSON EmailAndName where
   toJSON (EmailAndName emailV nameV) =
@@ -66,7 +66,7 @@ data MailjetMail = MailjetMail
     mjmHTMLPart :: Maybe Text,
     mjmTextPart :: Text
   }
-  deriving (Generic)
+  deriving (Generic, Show)
 
 -- |  Single recipient, no html.
 simpleMail :: EmailAndName -> EmailAndName -> Text -> Text -> MailjetMail
