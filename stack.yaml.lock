@@ -3,10 +3,21 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    name: protolude
+    version: 0.3.1
+    git: https://github.com/protolude/protolude.git
+    pantry-tree:
+      size: 3146
+      sha256: 685ed0191298da9540e772ffa746eb078d4f4a77ed8012a9933d3c79644b1054
+    commit: 3e249724fd0ead27370c8c297b1ecd38f92cbd5b
+  original:
+    git: https://github.com/protolude/protolude.git
+    commit: 3e249724fd0ead27370c8c297b1ecd38f92cbd5b
 snapshots:
 - completed:
-    size: 586069
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/18/14.yaml
-    sha256: 87842ecbaa8ca9cee59a7e6be52369dbed82ed075cb4e0d152614a627e8fd488
-  original: lts-18.14
+    size: 618876
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/19/6.yaml
+    sha256: fb634b19f31da06684bb07ce02a20c75a3162138f279b388905b03ebd57bb50f
+  original: lts-19.6
